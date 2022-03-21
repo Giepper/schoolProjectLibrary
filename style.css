@@ -1,5 +1,6 @@
 *{
     box-sizing: border-box;
+    font-family: sans-serif;
 }
 /* width */
 ::-webkit-scrollbar {
@@ -31,6 +32,7 @@ div.container{
     border: 2px solid darkseagreen;
     border-top: none;
     padding: 2%;
+    padding-top: 0;
     background-color: #fff;
 }
 #logo{
@@ -99,7 +101,7 @@ div.main{
     flex-wrap: nowrap;
     justify-content: space-around;
 }
-div.mainBook{
+.mainBook{
     border: 3px solid darkseagreen;
     padding: 2%;
     margin-top: 1%;
@@ -113,7 +115,7 @@ div.bookList{
     margin-right: auto;
     margin-top: 1%;
 }
-div.bookContainer,div.bookContainerNew{
+.bookContainer,.bookContainerNew{
     width: 80%;
     border: 1px solid darkseagreen;
     margin-left: auto;
@@ -247,15 +249,7 @@ div.bookModalContainer{
     border: 2px solid darkseagreen;
     animation-name: modalAccept;
     animation-duration: 5s;
-}
-@keyframes modalAccept{
-    0%{opacity: 0.2;transform: translateX(-90%);}
-    50%{opacity: 1;transform: translateX(0);}
-    100%{opacity: 0;transform: translateX(-100%);}
-}
-@keyframes navAnim{
-    0%{opacity: 0.2;transform: translateX(-90%);}
-    100%{opacity: 1;transform: translateX(0);}
+    animation-timing-function: linear;
 }
 .modalNone{
     display: none;
@@ -268,12 +262,6 @@ div.bookModalContainer{
     color: red;
     animation-name: endTime;
     animation-duration: 8s;
-}
-@keyframes endTime{
-    0%{opacity: 0.2; transform: translateY(-90%);}
-    20%{opacity: 1; transform: translateY(0);}
-    75%{opacity: 1; transform: translateY(0);}
-    100%{opacity: 0; transform: translateY(-90%);}
 }
 .close-btn,.accept{
     color: #333;
@@ -290,46 +278,104 @@ div.bookModalContainer{
     background-color: gainsboro;
     color: black;
 }
+.newHide{
+    visibility: hidden;
+}
+.profilePicture{
+    width: 25%;
+    background-color: #999;
+    border-radius: 50%;
+}
+.profile{
+    display: flex;
+    gap: 10px;
+}
+.profileText{
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+}
+.prfileTextStyle{
+    flex-direction: column;
+}
+.penalty{
+    color: red;
+    font-weight: bold;
+}
+.booksNumber{
+    color: #777;
+}
+#modal4{
+    display: block;
+}
+.modalRegister{
+    display: none;
+}
+.penaltyPay{
+    position: absolute;
+    width: 20%;
+    margin-left: -25%;
+    margin-top: 1%;
+    text-align: right;
+    font-weight: bold;
+    border-top-right-radius: .5em;
+    border-bottom-right-radius: .5em;
+    display: none;
+}
+.penaltyPay:hover{
+    margin-left: -15%;
+    text-align: center;
+    transition: 1s linear;
+}
 @keyframes modalWinAnim{
     0%{opacity: 0.2; transform: translateY(-90%);}
     100%{opacity: 100; transform: translateY(0);}
 }
-@media screen and (max-width: 655px){
+@keyframes endTime{
+    0%{opacity: 0.2; transform: translateY(-90%);}
+    20%{opacity: 1; transform: translateY(0);}
+    75%{opacity: 1; transform: translateY(0);}
+    100%{opacity: 0; transform: translateY(-90%);}
+}
+@keyframes modalAccept{
+    0%{opacity: 0.2;transform: translateX(-90%);}
+    50%{opacity: 1;transform: translateX(0);}
+    100%{opacity: 0;transform: translateX(-100%);}
+}
+@keyframes navAnim{
+    0%{opacity: 0.2;transform: translateX(-90%);}
+    100%{opacity: 1;transform: translateX(0);}
+}
+@media screen and (max-width: 1350px){
+    div.main{
+        flex-wrap: wrap;
+    }
+    div.bookModalList{
+        flex-direction: column;
+    }
+    .modalBookContent{
+        width: 70%;
+    }
+}
+@media screen and (max-width: 1300px){
     .headerArticle{
         flex-basis: 100%;
         padding-top: 1%;
     }
-    #search{
-        text-align: center;
-    }
     #vr{
         display: none;
     }
-    div.bookListDiv{
-        display: block;
+    #search{
+        text-align: center;
+        padding: 2rem;
+    }
+    .edit{
         width: 100%;
-    }
-    div.divListImage{
-        width: 100%;
-        border: none;
-    }
-    img.bookListImg{
-        width: 50%;
-    }
-    p{
-        margin: 1%;
-    }
-    .close-btn{
-        width: 25%;
     }
 }
 @media screen and (max-width: 1000px){
     .headerArticle{
         flex-basis: 100%;
         padding-top: 1%;
-    }
-    #search{
-        text-align: center;
     }
     #vr{
         display: none;
@@ -347,15 +393,35 @@ div.bookModalContainer{
         margin: 0;
     }
 }
-@media screen and (max-width: 1350px){
-    div.main{
-        flex-wrap: wrap;
-    }
-    div.bookModalList{
+@media screen and (max-width: 750px){
+    .profile{
         flex-direction: column;
     }
-    .modalBookContent{
-        width: 70%;
+    .profilePicture{
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+@media screen and (max-width: 655px){
+    #search{
+        text-align: center;
+    }
+    div.bookListDiv{
+        display: block;
+        width: 100%;
+    }
+    div.divListImage{
+        width: 100%;
+        border: none;
+    }
+    img.bookListImg{
+        width: 50%;
+    }
+    p{
+        margin: 1%;
+    }
+    .btn{
+        width: 25%;
     }
 }
 @media screen and (max-width: 400px){

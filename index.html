@@ -6,12 +6,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="Library-logo.png">
     <link rel="stylesheet" href="style.css">
-    <title>Document</title>
+    <title>Library</title>
 </head>
 <body>
+    <div class="modal" id="modal4">
+        <div class="modal-content">
+            <div class="modalLogin">
+                <h1>Zaloguj się</h1>
+                <input type="text" class="input search" id="login" name="login" placeholder="login" autocomplete="off"><br><br>
+                <input type="password" class="input search" id="password" name="login_password" placeholder="hasło" autocomplete="off"><br><br>
+                <button class="allBtn logBtn">Zaloguj</button>
+                <div class="modal-footer">
+                    <h3>Nie masz konta? <button class="allBtn regBtn">Zarejestruj się</button></h3>
+                </div>
+            </div>
+            <div class="modalRegister">
+                <h1>Zarejestruj się</h1>
+                <input type="text" class="input search" id="register" name="register" placeholder="nowy login" autocomplete="off"><br><br>
+                <input type="password" class="input search" id="newPassword" name="register_password" placeholder="nowe hasło" autocomplete="off"><br><br>
+                <button class="allBtn registerBtn">Zarejestruj</button>
+            </div>
+        </div>
+    </div>
     <div class="modal" id="modal1">
         <div class="modal-content">
-            <button class="close-btn cb-alternate">Zamknij</button>
+            <button class="close-btn cb-alternate btn">Zamknij</button>
             <div class="bookList bookModalList">
 
                 <div class="bookContainer bookModalContainer">
@@ -179,8 +198,8 @@
             <h1 class="error">Książka jest aktualnie niedostępna</h1>
         </div> 
         <div class="modalBookContent">
-            <button class="close-btn cb-alternate" id="closeBookList">Zamknij</button>
-            <button class='accept'>Pożycz</button>
+            <button class="close-btn cb-alternate btn" id="closeBookList">Zamknij</button>
+            <button class='accept btn'>Pożycz</button>
             <div class="bookListDiv">
                 <p class="bookTitleInfo"></p>
                 <p class="bookAuthorInfo"></p>
@@ -192,9 +211,9 @@
     <div class="modal-content" id="timeEnd"><h1>Upłynął czas wypożyczenia jednej lub więcej książek</h1></div>
     <div class="modal" id="modal3">
         <div class="modal-content borrowed">
-            <button class="close-btn cb-alternate" id="closeBorrowList">Zamknij</button>
+            <button class="close-btn cb-alternate btn" id="closeBorrowList">Zamknij</button>
             <div class="addNewBorrowBook"></div>
-            <div class="bookContainer borrowElement">
+            <!-- <div class="bookContainer borrowElement">
                 <div class="bookListDiv divListImage">
                     <img class="bookListImg" src="book-svgrepo-com (2).svg">
                 </div>
@@ -205,7 +224,7 @@
                     <p class="bookISBN smallText">ISBN: 2137659083422</p>
                 </div>
             </div>
-            <div class="bookContainer">
+            <div class="bookContainer borrowElement">
                 <div class="bookListDiv divListImage borrowElement">
                     <img class="bookListImg" src="book-svgrepo-com (2).svg">
                 </div>
@@ -215,10 +234,11 @@
                     <p class="bookLanguage smallText">Język: polski</p>
                     <p class="bookISBN smallText">ISBN: 0199472547692174</p>
                 </div>
-            </div>
+            </div> -->
         </div>
     </div>
     <div class="container">
+        <button class="penaltyPay allBtn">Zapłać karę</button>
         <div class="header">
             <div class="headerArticle" id="logo">
                 <img class="logoImg" src="liblog1.png">
@@ -227,10 +247,18 @@
                 <div class="verticalLine"></div>
             </div>
             <div class="headerArticle" id="search">
-                <form action="search.php" method="POST">
+                <!-- <form action="search.php" method="POST">
                     <input type="text" placeholder="Wyszukaj książkę..." class="search">
                     <input type="submit" class="searchBtn" value="Szukaj">
-                </form>
+                </form> -->
+                <div class="profile">
+                    <img class="profilePicture profileInfo" src="profile-svgrepo-com.svg">
+                    <div class="profileTextStyle">
+                        <h1 class="profileInfo profileText yourName">Witaj</h1>
+                        <h2 class="profileInfo profileText booksNumber">Wypożyczone książki: 0</h2>
+                        <h2 class="profileInfo profileText penalty">Kara: 0 zł</h2>
+                    </div>
+                </div>
             </div>
         </div>
         <hr class="hr">
@@ -238,7 +266,7 @@
             <div class="mainBook" id="bookList">
                 <h2 class="artTitle">Często wypożyczane książki</h2>
                 <div class="bookList">
-                    <div class="bookContainer" id="aaa">
+                    <div class="bookContainer">
                         <div class="bookListDiv divListImage">
                             <img class="bookListImg" src="lib.svg">
                         </div>
@@ -282,7 +310,8 @@
             <div class="mainBook" id="bookBorrow">
                 <div class="yourBooks">
                     <h2 class="artTitle">Książki wypożyczone przez ciebie</h2>
-                    <div class="bookContainer borrowElement">
+                    <div class="mainPageAdd"></div>
+                    <!-- <div class="bookContainer borrowElement mainPageElement">
                         <div class="bookListDiv divListImage">
                             <img class="bookListImg" src="book-svgrepo-com (2).svg">
                         </div>
@@ -294,7 +323,7 @@
                         </div>
                     </div>
 
-                    <div class="bookContainer borrowElement">
+                    <div class="bookContainer borrowElement mainPageElement">
                         <div class="bookListDiv divListImage">
                             <img class="bookListImg" src="book-svgrepo-com (2).svg">
                         </div>
@@ -304,7 +333,7 @@
                             <p class="bookLanguage smallText">Język: polski</p>
                             <p class="bookISBN smallText">ISBN: 0199472547692174</p>
                         </div>
-                    </div>
+                    </div> -->
 
                     <div class="bookContainerNew newBook">
                         <div class="bookListDiv divListImage">
@@ -312,9 +341,9 @@
                         </div>
                         <div class="bookListDiv" id="bookListInfo">
                             <p class="newBook">Wypożycz nową książkę</p>
-                            <!-- <p class="bookAuthor">Dmitrij Głuchowski</p>
-                            <p class="bookLanguage smallText">Język: polski, rosyjski</p>
-                            <p class="bookISBN smallText">ISBN: 0039288416631</p> -->
+                            <!-- <p class="bookAuthor newHide">Dmitrij Głuchowski</p>
+                            <p class="bookLanguage smallText newHide">Język: polski, rosyjski</p>
+                            <p class="bookISBN smallText newHide">ISBN: 0039288416631</p> -->
                         </div>
                     </div>
                 </div>
